@@ -7,7 +7,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
  * Used to easly add a feature that can be enabled or disabled
- * 
+ *
  * @author Joshua Estes <Joshua@Estes.in>
  */
 class FeatureToggleGeneric extends FeatureToggle
@@ -28,5 +28,15 @@ class FeatureToggleGeneric extends FeatureToggle
     public function isEnabled(FeatureInterface $feature)
     {
         return $this->options['enabled'];
+    }
+
+    public function __serialize(): array
+    {
+        // TODO: Implement __serialize() method.
+    }
+
+    public function __unserialize(array $data): void
+    {
+        // TODO: Implement __unserialize() method.
     }
 }

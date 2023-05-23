@@ -1,6 +1,8 @@
 <?php
 
 use JoshuaEstes\Component\FeatureToggle\Feature;
+use JoshuaEstes\Component\FeatureToggle\Toggle\FeatureToggleInterface;
+use Symfony\Component\OptionsResolver\Exception\UndefinedOptionsException;
 
 class FeatureTest extends \PHPUnit_Framework_TestCase
 {
@@ -15,7 +17,7 @@ class FeatureTest extends \PHPUnit_Framework_TestCase
 
     public function testWithToggle()
     {
-        $toggle = $this->getMockBuilder('JoshuaEstes\Component\FeatureToggle\Toggle\FeatureToggleInterface')
+        $toggle = $this->getMockBuilder(FeatureToggleInterface::class)
             ->getMock();
 
         $feature = new Feature();
@@ -27,7 +29,7 @@ class FeatureTest extends \PHPUnit_Framework_TestCase
 
     public function testWithConstructorArgument()
     {
-        $this->setExpectedException('Symfony\Component\OptionsResolver\Exception\UndefinedOptionsException');
+        $this->setExpectedException(UndefinedOptionsException::class);
 
         $feature = new Feature(
             array(
