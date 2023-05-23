@@ -20,7 +20,7 @@
     },
     "require": {
         "symfony/options-resolver": "~6.1",
-        "doctrine/common": "~2.13",
+        "doctrine/common": "~3.0",
         "doctrine/collections": "~1.6"
     },
     "require-dev": {
